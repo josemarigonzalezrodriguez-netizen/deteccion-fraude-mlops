@@ -1,0 +1,25 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python3 src/load_data.py
+    deps:
+    - path: src/load_data.py
+      hash: md5
+      md5: 746203ca7e387f56130045bf05bd97e0
+      size: 616
+  train:
+    cmd: python3 src/train.py
+    deps:
+    - path: data/raw/creditcard.csv
+      hash: md5
+      md5: dc31d6eb183be31c3ada5ab12115bdd2
+      size: 150817597
+    - path: src/train.py
+      hash: md5
+      md5: 9a22a4011f5f23bc11b9f19e20fcb7cf
+      size: 1433
+    outs:
+    - path: model.pkl
+      hash: md5
+      md5: cbf0ad22a9cbb4ef9ea34b9a35dee71a
+      size: 297243

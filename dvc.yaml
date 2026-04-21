@@ -1,0 +1,13 @@
+stages:
+  load_data:
+    cmd: python3 src/load_data.py
+    deps:
+      - src/load_data.py
+
+  train:
+    cmd: python3 src/train.py
+    deps:
+      - data/raw/creditcard.csv
+      - src/train.py
+    outs:
+      - model.pkl
